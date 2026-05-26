@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE RRL AND RRS KERNEL - Interaction Paradigms</title>
+<style>
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    margin: 0;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #4A90E2;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1 {
+    font-size: 20px;
+    margin: 0;
+}
+nav button {
+    background: white;
+    border: none;
+    margin-left: 8px;
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Timeline section */
+#timeline {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+.timeline-card {
+    flex: 0 0 180px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.timeline-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.timeline-card svg {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+/* Card title */
+.timeline-card h4 {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Card description */
+.timeline-card p {
+    font-size: 12px;
+    margin: 0;
+}
+
+/* Footer */
+footer {
+    background-color: #eaeaea;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+footer button {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    background-color: white;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>THE RRL AND RRS KERNEL - Interaction Paradigms Timeline</h1>
+    <nav>
+        <button>🏠 Home</button>
+        <button>🔄 Refresh</button>
+        <button>ℹ Info</button>
+    </nav>
+</header>
+
+<main>
+<section>
+    <h3 style="text-align:center; margin-bottom:15px;">Timeline of Interaction Paradigms</h3>
+    <div id="timeline">
+
+        <!-- Batch Processing -->
+        <div class="timeline-card">
+            <svg viewBox="0 0 64 64">
+                <rect x="14" y="14" width="36" height="36" fill="#666"/>
+            </svg>
+            <h4>Batch Processing</h4>
+            <p>Terminals submit jobs with no immediate feedback.</p>
+        </div>
+
+        <!-- Time-Sharing -->
+        <div class="timeline-card">
+            <svg viewBox="0 0 64 64">
+                <circle cx="32" cy="32" r="28" fill="#4A90E2"/>
+            </svg>
+            <h4>Time-Sharing</h4>
+            <p>Multiple users share system time for simultaneous use.</p>
+        </div>
+
+        <!-- Networking -->
+        <div class="timeline-card">
+            <svg viewBox="0 0 64 64">
+                <line x1="16" y1="16" x2="48" y2="48" stroke="#333" stroke-width="3"/>
+                <line x1="48" y1="16" x2="16" y2="48" stroke="#333" stroke-width="3"/>
+            </svg>
+            <h4>Networking</h4>
+            <p>Systems connected to share data and resources.</p>
+        </div>
+
+        <!-- Graphical Displays -->
+        <div class="timeline-card">
+            <svg viewBox="0 0 64 64">
+                <rect x="10" y="10" width="44" height="30" fill="#d9edf7"/>
+                <rect x="10" y="42" width="44" height="5" fill="#4A90E2"/>
+            </svg>
+            <h4>Graphical Displays</h4>
+            <p>Introduction of monitors and visual interfaces.</p>
+        </div>
+
+        <!-- Personal Computing -->
+        <div class="timeline-card">
+            <svg viewBox="0 0 64 64">
+                <rect x="12" y="12" width="40" height="30" fill="#4A90E2"/>
+                <circle cx="32" cy="50" r="5" fill="#666"/>
+            </svg>
+            <h4>Personal Computing</h4>
+            <p>Computers accessible on individual desktops.</p>
+        </div>
+
+        <!-- WIMP -->
+        <div class="timeline-card">
+            <svg viewBox="0 0 64 64">
+                <rect x="8" y="12" width="48" height="40" fill="#dff0d8"/>
+                <rect x="12" y="16" width="16" height="10" fill="#4A90E2"/>
+            </svg>
+            <h4>WIMP</h4>
+            <p>Windows, Icons, Menus, Pointer interfaces.</p>
+        </div>
+
+        <!-- Hypertext -->
+        <div class="timeline-card">
+            <svg viewBox="0 0 64 64">
+                <line x1="12" y1="12" x2="52" y2="12" stroke="#333" stroke-width="3"/>
+                <line x1="12" y1="24" x2="52" y2="24" stroke="#333" stroke-width="3"/>
+            </svg>
+            <h4>Hypertext</h4>
+            <p>Clickable text links connecting information nodes.</p>
+        </div>
+
+        <!-- Multimodality -->
+        <div class="timeline-card">
+            <svg viewBox="0 0 64 64">
+                <circle cx="32" cy="32" r="10" fill="#4A90E2"/>
+                <rect x="10" y="10" width="44" height="44" fill="none" stroke="#333" stroke-width="2"/>
+            </svg>
+            <h4>Multimodality</h4>
+            <p>Input/output through multiple channels: voice, gesture, touch.</p>
+        </div>
+
+        <!-- CSCW -->
+        <div class="timeline-card">
+            <svg viewBox="0 0 64 64">
+                <circle cx="20" cy="32" r="8" fill="#666"/>
+                <circle cx="44" cy="32" r="8" fill="#4A90E2"/>
+                <line x1="28" y1="32" x2="36" y2="32" stroke="#333" stroke-width="2"/>
+            </svg>
+            <h4>CSCW</h4>
+            <p>Collaboration through shared systems and networks.</p>
+        </div>
+
+        <!-- Web -->
+        <div class="timeline-card">
+            <svg viewBox="0 0 64 64">
+                <circle cx="32" cy="32" r="28" fill="#d9edf7"/>
+                <line x1="32" y1="4" x2="32" y2="60" stroke="#4A90E2" stroke-width="2"/>
+                <line x1="4" y1="32" x2="60" y2="32" stroke="#4A90E2" stroke-width="2"/>
+            </svg>
+            <h4>Web</h4>
+            <p>Global network of linked documents and resources.</p>
+        </div>
+
+        <!-- Agent-based -->
+        <div class="timeline-card">
+            <svg viewBox="0 0 64 64">
+                <circle cx="32" cy="32" r="12" fill="#4A90E2"/>
+                <circle cx="20" cy="20" r="4" fill="#666"/>
+                <circle cx="44" cy="44" r="4" fill="#666"/>
+            </svg>
+            <h4>Agent-based</h4>
+            <p>Intelligent agents act on behalf of users.</p>
+        </div>
+
+        <!-- Ubiquitous Computing -->
+        <div class="timeline-card">
+            <svg viewBox="0 0 64 64">
+                <rect x="20" y="10" width="24" height="44" rx="4" fill="#dff0d8"/>
+                <circle cx="32" cy="40" r="3" fill="#4A90E2"/>
+            </svg>
+            <h4>Ubiquitous Computing</h4>
+            <p>Computing integrated everywhere, seamless user interaction.</p>
+        </div>
+
+    </div>
+</section>
+</main>
+
+<footer>
+    <button>Scroll Left</button>
+    <button>Scroll Right</button>
+</footer>
+
+<script>
+const timeline = document.getElementById('timeline');
+document.querySelectorAll('footer button')[0].addEventListener('click', () => {
+    timeline.scrollBy({left: -200, behavior: 'smooth'});
+});
+document.querySelectorAll('footer button')[1].addEventListener('click', () => {
+    timeline.scrollBy({left: 200, behavior: 'smooth'});
+});
+</script>
+
+</body>
+</html>

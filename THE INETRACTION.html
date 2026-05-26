@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE RRL AND RRS KERNEL - Interaction System</title>
+<style>
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    margin: 0;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #4A90E2;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1 {
+    font-size: 20px;
+    margin: 0;
+}
+nav button {
+    background: white;
+    border: none;
+    margin-left: 8px;
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Main layout */
+#dashboard {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Sections */
+section {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+section h3 {
+    margin-top: 0;
+    font-size: 16px;
+}
+
+/* Inputs section */
+.input-device {
+    margin-bottom: 10px;
+}
+.input-device input,
+.input-device select {
+    width: 80%;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* Buttons */
+button.action-btn {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #4A90E2;
+    color: white;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button.action-btn:hover {
+    background-color: #357ABD;
+}
+
+/* Output blocks */
+.text-block {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    background-color: #fafafa;
+}
+
+.text-block h4 {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.text-block p {
+    font-size: 13px;
+}
+
+/* Footer */
+footer {
+    background-color: #eaeaea;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+footer button {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    background-color: white;
+    cursor: pointer;
+}
+</style>
+<script>
+function executeSystem() {
+    const query = document.getElementById('user-query').value;
+    const keyword = document.getElementById('keywords').value;
+    const menu = document.getElementById('menu-option').value;
+
+    const resultsSection = document.getElementById('results-output');
+    resultsSection.innerHTML = '';
+
+    // Simulate Norman’s execution/evaluation loop
+    let outputText = `<div class="text-block">
+        <h4>User Action:</h4>
+        <p>Query: ${query}</p>
+        <p>Keywords: ${keyword}</p>
+        <p>Menu Selected: ${menu}</p>
+    </div>`;
+
+    outputText += `<div class="text-block">
+        <h4>System Processing:</h4>
+        <p>RRL Engine retrieved papers matching input.</p>
+        <p>RRS Recommendation system analyzed similar works.</p>
+    </div>`;
+
+    outputText += `<div class="text-block">
+        <h4>Output Feedback:</h4>
+        <p>Results displayed to user with actionable recommendations.</p>
+    </div>`;
+
+    resultsSection.innerHTML = outputText;
+}
+</script>
+</head>
+<body>
+
+<header>
+    <h1>THE RRL AND RRS KERNEL - Interaction System</h1>
+    <nav>
+        <button aria-label="Home">🏠</button>
+        <button aria-label="Favorites">⭐</button>
+        <button aria-label="History">⏱</button>
+    </nav>
+</header>
+
+<main id="dashboard">
+
+<!-- USER INPUT -->
+<section>
+    <h3>User Input (Keyboard, Mouse, Menus)</h3>
+    <div class="input-device">
+        <input type="text" id="user-query" placeholder="Enter search query">
+    </div>
+    <div class="input-device">
+        <input type="text" id="keywords" placeholder="Enter keywords">
+    </div>
+    <div class="input-device">
+        <select id="menu-option">
+            <option value="All">All Types</option>
+            <option value="Journals">Journal Articles</option>
+            <option value="Books">Books</option>
+        </select>
+    </div>
+    <button class="action-btn" onclick="executeSystem()">Submit</button>
+</section>
+
+<!-- SYSTEM PROCESSING -->
+<section>
+    <h3>System Processing (Execution/Evaluation Loop)</h3>
+    <p>This section simulates the system interpreting your input, processing it through the RRL and RRS engines, and preparing output.</p>
+</section>
+
+<!-- OUTPUT FEEDBACK -->
+<section id="results-output">
+    <h3>Output / Feedback</h3>
+    <p>Results will appear here after executing the system.</p>
+</section>
+
+</main>
+
+<footer>
+    <button>Norman Loop</button>
+    <button>Abowd & Beale Translation</button>
+    <button>System Settings</button>
+</footer>
+
+</body>
+</html>

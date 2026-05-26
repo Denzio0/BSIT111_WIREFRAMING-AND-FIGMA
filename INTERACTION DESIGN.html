@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE RRL & RRS KERNEL</title>
+<style>
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #4A90E2;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 20px;
+}
+
+nav button {
+    background: white;
+    border: none;
+    margin-left: 8px;
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Main Dashboard */
+#dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px;
+}
+
+/* Workflow Section */
+#workflow {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 15px;
+    scroll-behavior: smooth;
+}
+
+.workflow-card {
+    flex: 0 0 180px;
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.workflow-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.workflow-card svg {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.workflow-card h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.workflow-card p {
+    font-size: 12px;
+}
+
+/* Research Section */
+#research {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.research-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.research-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.research-card h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.research-card p {
+    font-size: 13px;
+}
+
+.research-card a {
+    text-decoration: none;
+    color: #4A90E2;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #eaeaea;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+footer button {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    background-color: white;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>THE RRL & RRS KERNEL</h1>
+    <nav>
+        <button>🏠 Home</button>
+        <button>🔍 Research</button>
+        <button>ℹ About</button>
+    </nav>
+</header>
+
+<main id="dashboard">
+
+<!-- Workflow Section -->
+<section>
+    <h3 style="margin-bottom:15px; text-align:center;">User-System Design Workflow</h3>
+    <div id="workflow">
+
+        <!-- User Research -->
+        <div class="workflow-card">
+            <svg viewBox="0 0 64 64">
+                <circle cx="32" cy="32" r="28" fill="#4A90E2"/>
+            </svg>
+            <h4>User Research</h4>
+            <p>Understand users, tasks, and context of use.</p>
+        </div>
+
+        <!-- Personas & Cultural Probes -->
+        <div class="workflow-card">
+            <svg viewBox="0 0 64 64">
+                <circle cx="20" cy="24" r="8" fill="#666"/>
+                <circle cx="44" cy="24" r="8" fill="#4A90E2"/>
+            </svg>
+            <h4>Personas & Probes</h4>
+            <p>Create user archetypes and cultural probes.</p>
+        </div>
+
+        <!-- Scenarios -->
+        <div class="workflow-card">
+            <svg viewBox="0 0 64 64">
+                <rect x="12" y="12" width="40" height="40" fill="#d9edf7"/>
+                <line x1="12" y1="24" x2="52" y2="24" stroke="#333" stroke-width="2"/>
+                <line x1="12" y1="36" x2="52" y2="36" stroke="#333" stroke-width="2"/>
+            </svg>
+            <h4>Scenarios</h4>
+            <p>Define task flows and user contexts.</p>
+        </div>
+
+        <!-- Navigation Design -->
+        <div class="workflow-card">
+            <svg viewBox="0 0 64 64">
+                <rect x="8" y="12" width="48" height="40" fill="#dff0d8"/>
+                <rect x="12" y="16" width="16" height="10" fill="#4A90E2"/>
+            </svg>
+            <h4>Navigation Design</h4>
+            <p>Menus, buttons, and user paths are structured.</p>
+        </div>
+
+        <!-- Screen & Physical Layout -->
+        <div class="workflow-card">
+            <svg viewBox="0 0 64 64">
+                <rect x="10" y="10" width="44" height="30" fill="#f5f5f5"/>
+                <rect x="12" y="12" width="40" height="26" fill="#4A90E2"/>
+            </svg>
+            <h4>Screen/Layout</h4>
+            <p>Design interface and physical arrangement of screens.</p>
+        </div>
+
+        <!-- Prototyping -->
+        <div class="workflow-card">
+            <svg viewBox="0 0 64 64">
+                <rect x="12" y="12" width="40" height="40" fill="#e6e6e6"/>
+                <circle cx="32" cy="32" r="10" fill="#4A90E2"/>
+            </svg>
+            <h4>Prototyping</h4>
+            <p>Low or high-fidelity models to test ideas.</p>
+        </div>
+
+        <!-- Evaluation & Iteration -->
+        <div class="workflow-card">
+            <svg viewBox="0 0 64 64">
+                <circle cx="32" cy="32" r="28" fill="#dff0d8"/>
+                <polygon points="32,12 40,32 24,32" fill="#4A90E2"/>
+            </svg>
+            <h4>Evaluation & Iteration</h4>
+            <p>Test, gather feedback, and refine design.</p>
+        </div>
+
+        <!-- Deployment -->
+        <div class="workflow-card">
+            <svg viewBox="0 0 64 64">
+                <rect x="20" y="10" width="24" height="44" rx="4" fill="#dff0d8"/>
+                <circle cx="32" cy="40" r="3" fill="#4A90E2"/>
+            </svg>
+            <h4>Deployment</h4>
+            <p>Release system to users for real use.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Research Section -->
+<section>
+    <h3 style="margin-bottom:15px; text-align:center;">Research Results & Recommendations</h3>
+    <div id="research">
+
+        <div class="research-card">
+            <h3>Research Paper: RRL Systems</h3>
+            <p>Author: Jane Doe</p>
+            <p>Summary: Review of related literature on AI-assisted recommendation systems.</p>
+            <a href="#">Read More</a>
+        </div>
+
+        <div class="research-card">
+            <h3>RRS Case Study</h3>
+            <p>Author: John Smith</p>
+            <p>Summary: Study on user preferences in automated recommendation tools.</p>
+            <a href="#">Read More</a>
+        </div>
+
+        <div class="research-card">
+            <h3>Interface Evaluation Report</h3>
+            <p>Author: Alice Lee</p>
+            <p>Summary: Testing of screen layouts and navigation design for research platforms.</p>
+            <a href="#">Read More</a>
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <button onclick="document.getElementById('workflow').scrollBy({left: -200, behavior:'smooth'})">◀ Scroll Left</button>
+    <button onclick="document.getElementById('workflow').scrollBy({left: 200, behavior:'smooth'})">Scroll Right ▶</button>
+</footer>
+
+</body>
+</html>

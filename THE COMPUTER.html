@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE RRL AND RRS KERNEL</title>
+<style>
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+header {
+    background-color: #4A90E2;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+#dashboard {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.human-figure,
+.search-section,
+.results-section {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.human-figure {
+    text-align: center;
+}
+
+.human-figure p {
+    font-size: 14px;
+}
+
+footer {
+    background-color: #eaeaea;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+footer button {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    background-color: white;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>THE RRL AND RRS KERNEL</h1>
+</header>
+
+<main id="dashboard">
+
+<!-- INPUT DEVICES / USER QUERY -->
+<section class="human-figure">
+    <svg width="200" height="300" viewBox="0 0 200 300">
+        <!-- Search Bar -->
+        <rect x="30" y="30" width="140" height="30" rx="5" fill="#4A90E2"/>
+        <text x="45" y="50" font-size="12" fill="white">User Query / Search</text>
+
+        <!-- Keywords / Filters -->
+        <rect x="30" y="75" width="140" height="25" rx="5" fill="#666"/>
+        <text x="50" y="92" font-size="12" fill="white">Keywords & Filters</text>
+
+        <!-- Touch Input (simulated) -->
+        <rect x="50" y="120" width="100" height="50" rx="6" fill="#888"/>
+        <text x="70" y="150" font-size="12" fill="white">Touch Input</text>
+
+        <!-- Data Flow Arrow -->
+        <line x1="100" y1="180" x2="100" y2="210" stroke="black" stroke-width="2"/>
+        <polygon points="95,210 105,210 100,220" fill="black"/>
+    </svg>
+    <p>User Inputs: queries, keywords, and search filters</p>
+</section>
+
+<!-- PROCESSING / RRL & RRS ENGINES -->
+<section class="search-section">
+    <svg width="260" height="300" viewBox="0 0 260 300">
+        <!-- RRL Engine -->
+        <rect x="70" y="30" width="120" height="45" rx="6" fill="#cce5ff"/>
+        <text x="90" y="58" font-size="12">RRL Retrieval Engine</text>
+
+        <!-- RRS Engine -->
+        <rect x="70" y="90" width="120" height="45" rx="6" fill="#cce5ff"/>
+        <text x="95" y="118" font-size="12">RRS Recommendation System</text>
+
+        <!-- Network Cloud / APIs -->
+        <ellipse cx="130" cy="200" rx="70" ry="28" fill="#d9edf7"/>
+        <text x="100" y="205" font-size="12">Network / APIs</text>
+
+        <!-- Arrows showing data flow -->
+        <line x1="130" y1="75" x2="130" y2="90" stroke="black" stroke-width="2"/>
+        <line x1="130" y1="135" x2="130" y2="172" stroke="black" stroke-width="2"/>
+    </svg>
+    <p>Processing: RRL retrieval, recommendation system, network interactions</p>
+</section>
+
+<!-- STORAGE AND OUTPUT -->
+<section class="results-section">
+    <svg width="300" height="300" viewBox="0 0 300 300">
+        <!-- Database / Memory -->
+        <ellipse cx="150" cy="40" rx="65" ry="18" fill="#dff0d8"/>
+        <rect x="85" y="40" width="130" height="55" fill="#dff0d8"/>
+        <ellipse cx="150" cy="95" rx="65" ry="18" fill="#dff0d8"/>
+        <text x="115" y="75" font-size="12">Database Storage</text>
+
+        <!-- Data Flow Arrow -->
+        <line x1="150" y1="120" x2="150" y2="145" stroke="black" stroke-width="2"/>
+        <polygon points="145,145 155,145 150,155" fill="black"/>
+
+        <!-- Display Screen -->
+        <rect x="75" y="160" width="150" height="65" rx="6" fill="#333"/>
+        <rect x="90" y="175" width="120" height="35" fill="#4A90E2"/>
+        <text x="110" y="215" font-size="12" fill="white">Research Results Display</text>
+    </svg>
+    <p>Output: retrieved research papers and RRS recommendations displayed to the user</p>
+</section>
+
+</main>
+
+<footer>
+    <button>Font Size</button>
+    <button>High Contrast</button>
+    <button>Audio Cues</button>
+    <button>Tactile Symbols</button>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE RRL AND RRS KERNEL</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+	<style>
+	* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #4A90E2;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+nav button {
+    background: white;
+    border: none;
+    margin-left: 8px;
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Main layout */
+#dashboard {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Human figure section */
+.human-figure {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.human-figure p {
+    font-size: 14px;
+}
+
+/* Search section */
+.search-section {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+#search-bar {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.filters select,
+.filters input {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 8px;
+}
+
+/* Results section */
+.results-section {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.text-block {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    background-color: #fafafa;
+}
+
+.text-block h3 {
+    margin-top: 0;
+    font-size: 16px;
+}
+
+.text-block a {
+    text-decoration: none;
+    color: #4A90E2;
+    font-weight: bold;
+}
+
+/* Icons */
+.icons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.icons button {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: #eaeaea;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+footer button {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    background-color: white;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>THE RRL AND RRS KERNEL</h1>
+        <nav>
+            <button aria-label="Home"><svg width="24" height="24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></button>
+            <button aria-label="Favorites"><svg width="24" height="24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+            <button aria-label="History"><svg width="24" height="24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-4-4 1.41-1.41L11 14.17V8h2v6.17l2.59-2.58L17 13l-6 4z"/></svg></button>
+        </nav>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main id="dashboard">
+        <!-- Human Figure Column -->
+        <section class="human-figure">
+            <svg id="human" width="200" height="300" viewBox="0 0 200 300" aria-label="Human figure interacting with dashboard">
+                <!-- Simple silhouette -->
+                <circle cx="100" cy="50" r="30" fill="#333"/> <!-- Head -->
+                <rect x="85" y="80" width="30" height="60" fill="#333"/> <!-- Body -->
+                <rect x="70" y="140" width="15" height="40" fill="#333"/> <!-- Left arm -->
+                <rect x="115" y="140" width="15" height="40" fill="#333"/> <!-- Right arm -->
+                <rect x="85" y="200" width="15" height="50" fill="#333"/> <!-- Left leg -->
+                <rect x="100" y="200" width="15" height="50" fill="#333"/> <!-- Right leg -->
+                <!-- Pointing hand (animated) -->
+                <rect id="pointer" x="115" y="140" width="20" height="10" fill="#4A90E2" transform="rotate(45 125 145)"/>
+            </svg>
+            <p>Interact with the dashboard by hovering over elements.</p>
+        </section>
+
+        <!-- Search and Filters Column -->
+        <section class="search-section">
+            <input type="text" id="search-bar" placeholder="Search RRL databases or enter query for RRS recommendations" aria-label="Search bar">
+            <div class="filters">
+                <select aria-label="Literature Type">
+                    <option>All Types</option>
+                    <option>Journal Articles</option>
+                    <option>Books</option>
+                </select>
+                <select aria-label="Date Range">
+                    <option>Any Date</option>
+                    <option>Last 5 Years</option>
+                    <option>Last 10 Years</option>
+                </select>
+                <input type="text" placeholder="Keywords" aria-label="Keywords">
+            </div>
+        </section>
+
+        <!-- Text Blocks and Icons Column -->
+        <section class="results-section">
+            <div class="text-block" id="result1">
+                <h3>Sample Research Paper Title</h3>
+                <p>Author: John Doe</p>
+                <p>This is a readable text block summarizing the abstract. It provides key insights into the topic...</p>
+                <a href="#" aria-label="Read more">Read More</a>
+            </div>
+            <div class="text-block" id="result2">
+                <h3>Related Recommendation</h3>
+                <p>AI-Suggested: Based on your query, this paper cites similar works.</p>
+                <p>Snippet: Exploring methodologies in RRL systems...</p>
+                <a href="#" aria-label="Read more">Read More</a>
+            </div>
+            <div class="icons">
+                <button aria-label="Export"><svg width="24" height="24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg></button>
+                <button aria-label="Audio Cue" onclick="playAudioCue()">🔊</button>
+                <button aria-label="Tactile Feedback">👋</button> <!-- Visual symbol for haptic -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer with Accessibility Tools -->
+    <footer>
+        <button id="font-size-btn" aria-label="Adjust font size">Font Size: <span id="font-size-display">16px</span></button>
+        <button id="color-btn" aria-label="Toggle color adjustment">High Contrast</button>
+        <button id="audio-btn" aria-label="Enable audio cues">Audio Cues</button>
+        <button id="tactile-btn" aria-label="Simulate tactile feedback">Tactile Symbols</button>
+    </footer>
+</body>
+</html>
